@@ -1,6 +1,7 @@
 
 
 .menu{
+    display: flex;
     background-color: #F8F8F8;
     border: 0.0625vw solid #BDBDBD;
     border-bottom-left-radius:0.6875vw;
@@ -9,6 +10,8 @@
 }
 
 .search{
+    padding-left: 0.1vw;
+    padding-right: 0.1vw;
     height: 2.5vw;
     width: 18vw;
     font-size: 1.5vw;
@@ -20,7 +23,7 @@
 
 .menu_airshed{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 27vw;
     height: 4vw;
     font-size: 1.6vw;
