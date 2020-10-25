@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="{% static 'hero/css/header.css'%}">
+    <link rel="stylesheet" href="{% static 'create/css/style.css'%}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <nav>
+                <ul class="menu_airshed">
+                    <li>My Airshed</li>
+                    <li>My planes</li>
+                    <li>Create planes</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="create_plane"> 
+        
+        <div class="create_title">Create plane</div>
+        
+        <div><input class="input_title" value="Text..."></div>
+        
+        <div class="create_description"><textarea>Description</textarea></div>
+        
+        <div class="price_for_day">
+            <div style="text-align: left;">Price for a day</div>
+            <input type="number" value="1" min="1">
+        </div>
+       
+        <div class="plane_type">
+            <div style="text-align: left;">Type for a plane</div>
+            <select>
+                <option>Business</option>
+                <option>Medium</option>
+                <option>Econome</option>
+              </select>
+        </div>
+
+        <div class="create_but"><button>Submit</button></div>
+
+    </section>    
+</body>
+</html>

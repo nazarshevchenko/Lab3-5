@@ -1,0 +1,23 @@
+@import "manage.css";
+@import "switch.css";
+@import "header.css";
+
+body{
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.1vw;
+}
+li {
+    list-style-type: none; 
+}
+
+li:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+ul{
+    padding-left: 3vw;
+}

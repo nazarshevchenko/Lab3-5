@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'hero/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+
+    <title>Hero</title>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <nav>
+                <ul class="menu_airshed">
+                    <li>My Airshed</li>
+                    <li>My planes</li>
+                    <li>Create planes</li>
+                </ul>
+            </nav>
+            <div class="menu_buttons">
+                <input class="search" type="Search" value="Search">
+                <button class="button_search">Search</button>
+                <button class="button_clear">Clear</button>
+            </div>
+            
+        </div>
+    </header>
+    
+    <section class="content">
+        <div class="manage">
+            <div class="top">
+                
+                <div style="font-weight: 400; color: #333333; margin-top: 0.2vw; font-size: 2vw;">Manage plans</div> 
+                        
+                <div class="sort">
+                    <div style="font-size: 1.1vw;">Sort by the most expensive plans</div>
+
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>  
+
+            </div>
+            
+            <div class="low">
+                <div style="font-size: 1.2vw; color: #616161;">Sort by the most expensive plans</div>
+                <button>Count</button>
+                <div class="price">
+                    <div style="color: #616161; font-size: 1.2vw;">Total expenses:</div>
+                    <div style="color: #333333; font-size: 1.2vw; font-weight: 700;">Price</div>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+
+        </div>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+
+.content{
+    display: flex;
+}
+
+.manage{
+    margin-top: 2vw;
+    width: 25%;
+    border-right: 0.15vw solid #BDBDBD;
+}
+
+
+
+.top{
+    width: 95%;
+    text-align: center;
+    border-bottom: 0.15vw solid #BDBDBD;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 1.8vw;
+}
+
+.low{
+    margin-top: 2vw;
+    width: 95%;
+    text-align: center;
+}
+
+.low button{
+    margin-top: 1vw;
+    height: 3vw;
+    width: 10vw;
+    background-color: #0275D8;
+    border: 0;
+    border-radius: 0.5vw;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.3vw;
+}
+
+.price{
+    padding-top: 1vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.sort{
+    display: flex;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #616161;
+}
+
+.sort div{
+    text-align: left;
+}
