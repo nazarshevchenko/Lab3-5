@@ -1,7 +1,10 @@
 from django.shortcuts import render
+from .models import Plane
+
 
 # Create your views here.
 def index(requests):
-    return render(requests, "hero/index.html")
+    create = Plane.objects.all()
+    return render(requests, "hero/index.html", {'create': create})
 
 
