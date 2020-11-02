@@ -1,4 +1,11 @@
 
+a{
+    color: #000 !important;
+    text-decoration: none;
+}
+
+
+
 .create_plane{
     padding-top: 3vw;
     width: 50%;

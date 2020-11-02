@@ -5,6 +5,13 @@ body{
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1vw;
 }
+
+.a{
+    color: #000 !important;
+    text-decoration: none;
+}
+
+
 li {
     list-style-type: none; 
 }
@@ -15,3 +22,6 @@ li:before {
     height: 100%;
     vertical-align: middle;
 }
+
+
+

@@ -7,14 +7,23 @@ body{
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.1vw;
 }
+
+
+a:any-link{
+    color: #000 !important;
+    text-decoration: none;
+}
+
+
+
 li {
     list-style-type: none; 
 }
 
 li:before {
     content: "";
-    display: inline-block;
     height: 100%;
+    display: inline-block;
     vertical-align: middle;
 }
 
