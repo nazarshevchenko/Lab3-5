@@ -25,29 +25,11 @@
     </header>
     
     <section class="create_plane"> 
-        
-        <div class="create_title">Create plane</div>
-        
-        <div><input class="input_title" value="Text..."></div>
-        
-        <div class="create_description"><textarea>Description</textarea></div>
-        
-        <div class="price_for_day">
-            <div style="text-align: left;">Price for a day</div>
-            <input type="number" value="1" min="1">
-        </div>
-       
-        <div class="plane_type">
-            <div style="text-align: left;">Type for a plane</div>
-            <select>
-                <option>Business</option>
-                <option>Medium</option>
-                <option>Econome</option>
-              </select>
-        </div>
-
-        <div class="create_but"><button>Submit</button></div>
-
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            <h1>Are you sure you want this?</h1>
+            <div class="create_but"><button type="submit">Delete</button></div>
+        </form>
     </section>    
 </body>
 </html>

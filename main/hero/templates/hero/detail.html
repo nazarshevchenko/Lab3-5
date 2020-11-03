@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'hero/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+
+    <title>Hero</title>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <nav>
+                <ul class="menu_airshed">
+                    <li><a href="/">My Airshed</a></li>
+                    <li><a href="/">My planes</a></li>
+                    <li><a href="/create">Create planes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section>
+        <div style="margin-left: auto; margin-right: auto; width: 50%; text-align: center;">
+            <h1>{{ plane.text }}</h1>
+            <p>Price = {{ plane.text }} $/day </p>
+            <p>{{ plane.description }}</p>
+            {%  if plane.type_plane == 1 %}
+                <p>Business</p>
+            {%  elif plane.type_plane == 2 %}
+                <p>Medium</p>
+            {% else %}
+                <p>Econome</p>
+            {% endif %}
+        </div>
+    </section>
+    
+
+    
+</body>
+</html>

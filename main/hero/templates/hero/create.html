@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="{% static 'hero/css/header.css'%}">
+    <link rel="stylesheet" href="{% static 'create/css/style.css'%}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <nav>
+                <ul class="menu_airshed">
+                    <li><a class="a" href="/">My Airshed</a></li>
+                    <li><a class="a" href="/">My planes</a></li>
+                    <li><a class="a" href="/create">Create planes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="create_plane"> 
+        <form method="POST" novalidate>
+            {% csrf_token %}
+
+            <div class="create_title">Create plane</div>
+            
+            <div>{{ form.text }}</div>
+            
+            <div class="create_description">{{ form.description }}</div>
+            
+            <div class="price_for_day">
+                <div style="text-align: left;">Price for a day</div>
+                {{ form.price }}
+            </div>
+        
+            <div class="plane_type">
+                <div style="text-align: left;">Type for a plane</div>
+                
+                {{ form.type_plane }}
+            </div>
+            <div style="background-color: antiquewhite; width: 54%; 
+            margin-left: auto; margin-right: auto; margin-top: 1vw; line-height: 1.5vw;" >
+            {{ error }}</div>
+            <div class="create_but"><button type="submit">Submit</button></div>
+        </form>
+    </section>    
+</body>
+</html>

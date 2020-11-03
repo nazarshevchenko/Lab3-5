@@ -9,56 +9,82 @@
     <title>Hero</title>
 </head>
 <body>
-    <header>
-        <div class="menu">
-            <nav>
-                <ul class="menu_airshed">
-                    <li><a href="/">My Airshed</a></li>
-                    <li><a href="/">My planes</a></li>
-                    <li><a href="/create">Create planes</a></li>
-                </ul>
-            </nav>
-            <div class="menu_buttons">
-                <input class="search" type="Search" value="Search">
-                <button class="button_search">Search</button>
-                <button class="button_clear">Clear</button>
+
+    <form method="GET">
+        <header>
+            <div class="menu">
+                <nav>
+                    <ul class="menu_airshed">
+                        <li><a href="/">My Airshed</a></li>
+                        <li><a href="/">My planes</a></li>
+                        <li><a href="/create">Create planes</a></li>
+                    </ul>
+                </nav>
+                <div class="menu_buttons">
+                    <div class="searchFilter">
+                        {{ filter.form }}
+                    </div>
+                    <button class="button_search" type="submit">Search</button>
+                    <button name='clear' value='1' class="button_clear">Clear</button>
+                </div>
+                
             </div>
-            
-        </div>
-    </header>
+        </header>
+    </form>
     
+
+    <form method="POST">
+        {% csrf_token %}
     <section class="content">
+        
         <div class="manage">
             <div class="top">
                 
                 <div style="font-weight: 400; color: #333333; margin-top: 0.2vw; font-size: 2vw;">Manage plans</div> 
                         
                 <div class="sort">
-                   <a style='margin-left: auto; margin-right: auto;' href="/sort"><button>Sort</button></a>
+                   <a href='/sort'><button name='sort' value="1" class="sort_button">Sort</button></a>
                 </div>  
 
             </div>
             
             <div class="low">
                 <div style="font-size: 1.2vw; color: #616161;">Sort by the most expensive plans</div>
-                <button>Count</button>
+                    <fieldset id="personalInfo" style="margin: 0; padding: 0; border: none;">
+                        <button name='count' value="1" type="submit">Count</button>
+                    </fieldset>
                 <div class="price">
-                    <div style="color: #616161; font-size: 1.2vw;">Total expenses:</div>
-                    <div style="color: #333333; font-size: 1.2vw; font-weight: 700;">Price</div>
+                    
+                        <div style="color: #616161; font-size: 1.2vw;">Total expenses:</div>
+                        <div style="color: #333333; font-size: 1.2vw; font-weight: 700;">Price: {{ count }}</div>
                 </div>
             </div>
         </div>
         
-        <div class="content_data" id="content_data" style="width: 75%; text-align: center;">
+        <div class="content_data" id="content_data" style="width: 61.5vw; text-align: center; padding-top: 1vw; justify-content: space-between; margin-left: auto; margin-right: auto;">
             {% for el in create %}
                 <div class="data">
-                    <h3>{{el.text}}</h3>
-                    <p>{{el.price}}</p>
+                    <a href="/{{ el.id }}"><h3>{{el.text}}</h3></a>
+                    <p>Price = {{el.price}} $/day</p>
+                    <p>{{el.description}}</p>
+                    
+                    <div style="padding-bottom: 1vw;">
+
+                        <fieldset id="addressInfo" style="margin: 0; padding: 0; border: none;">
+                                <label>Add to Count<input type="checkbox" name="{{el.id}}" value="1"></label>
+                            
+                        </fieldset>
+                    </div>
+                    <div class="menu_buttons" style="width: 14vw; margin-right: auto;">
+                        <a href="/{{ el.id }}/update"><button name='update' value='/{{ el.id }}/update' class="button_search">Update</button></a>
+                        <a href="/{{ el.id }}/delete"><button name='delete' value='/{{ el.id }}/delete' class="button_clear">Delete</button></a>
+                    </div>
+                    
                 </div>
-            {% endfor %}s
+            {% endfor %}
         </div>
     </section>
-
-    
-</body>
+    </form>
+        
+    </body>
 </html>
